@@ -6,6 +6,11 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  // WhatsApp contact info with updated number
+  const whatsappNumber = "+918884447957";
+  const whatsappMessage = encodeURIComponent("Hi! I'm interested in booking a celebration at Maja Takies.");
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -54,7 +59,9 @@ const Navbar = () => {
                 </a>
               ))}
               <a 
-                href="#book-now" 
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer" 
                 className="btn-primary"
               >
                 Book Now
@@ -90,7 +97,9 @@ const Navbar = () => {
               </a>
             ))}
             <a 
-              href="#book-now" 
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
               className="block px-3 py-2 btn-primary text-center mt-3"
               onClick={() => setIsMenuOpen(false)}
             >

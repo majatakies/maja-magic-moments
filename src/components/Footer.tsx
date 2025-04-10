@@ -68,10 +68,10 @@ const Footer = () => {
               123 Celebration Avenue, Film City, Mumbai 400001
             </p>
             <p className="mb-2">
-              bookings@majatakies.com
+              majatakies25@gmail.com
             </p>
             <p>
-              +91 888 888 8888
+              +91 8884447957
             </p>
           </div>
         </div>

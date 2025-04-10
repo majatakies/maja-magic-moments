@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { MessageSquare, Mail, Phone, MapPin, Calendar } from 'lucide-react';
+import { Mail, Phone, MapPin, Calendar } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
 
 const Contact = () => {
@@ -18,6 +18,11 @@ const Contact = () => {
     date: '',
     message: ''
   });
+
+  // WhatsApp contact info with the updated number
+  const whatsappNumber = "+918884447957";
+  const whatsappMessage = encodeURIComponent("Hi! I'm interested in booking a celebration at Maja Takies.");
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -47,11 +52,6 @@ const Contact = () => {
       message: ''
     });
   };
-
-  // WhatsApp contact info - replace with actual number
-  const whatsappNumber = "+918888888888";
-  const whatsappMessage = encodeURIComponent("Hi! I'm interested in booking a celebration at Maja Takies.");
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   return (
     <section id="contact" className="py-20">
@@ -159,19 +159,6 @@ const Contact = () => {
                     Send Inquiry
                   </Button>
                 </form>
-                
-                <div className="mt-8 text-center">
-                  <p className="text-gray-600 mb-4">For faster response, contact us directly on WhatsApp</p>
-                  <a 
-                    href={whatsappLink} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="btn-whatsapp inline-flex"
-                  >
-                    <MessageSquare className="mr-2" size={20} />
-                    Contact on WhatsApp
-                  </a>
-                </div>
               </CardContent>
             </Card>
           </div>
@@ -186,14 +173,14 @@ const Contact = () => {
                   <Phone className="text-maja-primary mr-4" />
                   <div>
                     <h4 className="font-medium">Phone</h4>
-                    <p className="text-gray-600">+91 888 888 8888</p>
+                    <p className="text-gray-600">+91 8884447957</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <Mail className="text-maja-primary mr-4" />
                   <div>
                     <h4 className="font-medium">Email</h4>
-                    <p className="text-gray-600">bookings@majatakies.com</p>
+                    <p className="text-gray-600">majatakies25@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -208,17 +195,25 @@ const Contact = () => {
                   <div>
                     <h4 className="font-medium">Operating Hours</h4>
                     <p className="text-gray-600">
-                      Monday - Sunday: 11:00 AM - 10:00 PM
+                      Monday - Sunday: 11:00 AM - 1:00 AM
                     </p>
                   </div>
                 </div>
+                <a 
+                  href={whatsappLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="btn-whatsapp inline-flex w-full justify-center mt-4"
+                >
+                  Contact on WhatsApp
+                </a>
               </CardContent>
             </Card>
             
             <Card className="flex-1">
               <CardContent className="p-0">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.372669435119!2d72.82319007557056!3d19.180298582044438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7c457257e5d%3A0x8fdcc87e85e58c56!2sFilm%20City%2C%20Goregaon%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.069432684738!2d77.60713601513351!3d13.032350490811502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17b7f46c1373%3A0x31fcb47ef1d4851!2sMaja%20Takies!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin" 
                   width="100%" 
                   height="250" 
                   style={{ border: 0 }} 
